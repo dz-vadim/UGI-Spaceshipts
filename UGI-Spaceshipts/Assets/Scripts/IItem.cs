@@ -2,6 +2,6 @@
 
 public interface IItem 
 {
-    string Name { get; }
+    string UIName { get; }
     Sprite UIIcon { get; }
 }

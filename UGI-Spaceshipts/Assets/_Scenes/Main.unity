@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 108235352}
   - component: {fileID: 108235351}
   m_Layer: 5
-  m_Name: Cell (2)
+  m_Name: Empty Cell (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1429685913160870358, guid: 3ec979bd0944ae54bb3e1a621e050371,
     type: 3}
+  RateOfFire: 1
 --- !u!1 &354779239
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +544,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
+  leftLimit: -1
+  rigthLimit: 1
+  bottomLimit: -1
+  upperLimit: 1.5
 --- !u!1 &943198121
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +560,7 @@ GameObject:
   - component: {fileID: 943198124}
   - component: {fileID: 943198123}
   m_Layer: 5
-  m_Name: Cell (1)
+  m_Name: Empty Cell (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,10 +898,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Items:
   - {fileID: 11400000, guid: 3a1c6f91198e2f549906939a121beaa3, type: 2}
-  - {fileID: 11400000, guid: 3a1c6f91198e2f549906939a121beaa3, type: 2}
-  - {fileID: 11400000, guid: 3ddbaad4d4b25a84c9898862f9e0485f, type: 2}
-  - {fileID: 11400000, guid: 6c8cad18993ce634481ce6136e3de2ae, type: 2}
-  - {fileID: 11400000, guid: 3ddbaad4d4b25a84c9898862f9e0485f, type: 2}
+  - {fileID: 11400000, guid: d86b4848939db664f8226702bd84c741, type: 2}
+  - {fileID: 11400000, guid: 3d8f2d34f894f7540ba4a0727fb895b1, type: 2}
+  - {fileID: 11400000, guid: 02d427ed46857e84b80985b83d0c04f0, type: 2}
   _inventoryCellTemplate: {fileID: 2490399315598356737, guid: e687eadf9fb903547b16b6774c95703c,
     type: 3}
   _container: {fileID: 1922918090}
@@ -913,7 +917,7 @@ GameObject:
   - component: {fileID: 1947639894}
   - component: {fileID: 1947639893}
   m_Layer: 5
-  m_Name: Cell
+  m_Name: Empty Cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

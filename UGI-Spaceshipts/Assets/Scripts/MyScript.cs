@@ -59,6 +59,7 @@ public class MyScriptEditor : Editor
             myScript.someColor = EditorGUILayout.ColorField("Color", myScript.someColor);
             myScript.someString = EditorGUILayout.TextField("Text", myScript.someString);
             myScript.someNumber = EditorGUILayout.IntField("Number", myScript.someNumber);
+
         }
     }
 }

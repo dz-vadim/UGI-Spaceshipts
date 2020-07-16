@@ -5,15 +5,25 @@ using UnityEngine;
 public class SpawnProjectile : MonoBehaviour
 {
     public GameObject projectile;
+    public float RateOfFire = 1.0f;
+    
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (Input.GetMouseButtonDown(0))
+        StartCoroutine(Fire(RateOfFire));
+    }
+
+    IEnumerator Fire(float RateOfFire)
+    {
+        while (true)
         {
-            Instantiate(projectile,transform);
+            yield return new WaitForSeconds(RateOfFire);
+            Spawn();
         }
     }
 
-   
+    private void Spawn()
+    {
+        Instantiate(projectile, transform);
+    }
 }

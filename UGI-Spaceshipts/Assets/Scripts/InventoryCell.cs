@@ -43,7 +43,7 @@ public class InventoryCell : MonoBehaviour, IDragHandler, IEndDragHandler, IBegi
 
     public void Render(IItem item)
     {
-        _nameField.text = item.Name;
+        _nameField.text = item.UIName;
         _iconField.sprite = item.UIIcon;
     }
 

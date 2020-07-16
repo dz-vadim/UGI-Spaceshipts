@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEditor;
 
 
-[CreateAssetMenu(menuName = "Item")]
-public class AssesItem : ScriptableObject, IItem
-{
-    public string Name => _name;
+[CreateAssetMenu(fileName ="New Item" ,menuName = "Item")]
+public class AssetItem : ScriptableObject, IItem
+{    
+    public string UIName => _name;
     public Sprite UIIcon => _uiIcon;
 
 
@@ -38,47 +38,47 @@ public class AssesItem : ScriptableObject, IItem
    public objectType ObjectType;
 }
 
-[CustomEditor(typeof(AssesItem))]
+[CustomEditor(typeof(AssetItem))]
 
 public class AssetItemEditor : Editor
 {
     override public void OnInspectorGUI()
     {
         base.DrawDefaultInspector();
-        var assesItem = target as AssesItem;
+        var assesItem = target as AssetItem;
         
         switch (assesItem.ObjectType)
         {
-            case AssesItem.objectType.SmallEngine:
+            case AssetItem.objectType.SmallEngine:
                 EditorGUILayout.LabelField("Medium slot", EditorStyles.boldLabel);
                 assesItem.EnginePower = EditorGUILayout.IntField("Engine Power", assesItem.EnginePower);
                 break;
 
-            case AssesItem.objectType.LargeEngine:
+            case AssetItem.objectType.LargeEngine:
                 EditorGUILayout.LabelField("Hard slot", EditorStyles.boldLabel);
                 assesItem.EnginePower = EditorGUILayout.IntField("Engine Power", assesItem.EnginePower);
                 break;
 
-            case AssesItem.objectType.EnergySheild:
+            case AssetItem.objectType.EnergySheild:
                 EditorGUILayout.LabelField("Medium slot", EditorStyles.boldLabel);
                 assesItem.DamagResistance = EditorGUILayout.IntField("Damage Resistance", assesItem.DamagResistance);
                 break;
 
-            case AssesItem.objectType.Machine_Plasma_Shield:
+            case AssetItem.objectType.Machine_Plasma_Shield:
                 EditorGUILayout.LabelField("Hard slot", EditorStyles.boldLabel);
                 break;                
 
-            case AssesItem.objectType.HPRegenerator:
+            case AssetItem.objectType.HPRegenerator:
                 EditorGUILayout.LabelField("Hard slot", EditorStyles.boldLabel);
                 assesItem.RegenerationValue = EditorGUILayout.IntField("Regeneration Value", assesItem.RegenerationValue);
                 break; 
                 
-            case AssesItem.objectType.MachineGun2x:
+            case AssetItem.objectType.MachineGun2x:
                 EditorGUILayout.LabelField("Medium slot", EditorStyles.boldLabel);
                 SetGunProperties(assesItem);
                 break;
                 
-            case AssesItem.objectType.СombinationGun2x:
+            case AssetItem.objectType.СombinationGun2x:
                 EditorGUILayout.LabelField("Hard slot", EditorStyles.boldLabel);
                 SetGunProperties(assesItem);
                 break;                
@@ -90,7 +90,7 @@ public class AssetItemEditor : Editor
         }
     }
 
-    public void SetGunProperties(AssesItem item)
+    public void SetGunProperties(AssetItem item)
     {
         item.Damage = EditorGUILayout.IntField("Damage", item.Damage);
         item.RateOfFire = EditorGUILayout.IntField("RateOfFire", item.RateOfFire);
@@ -98,4 +98,3 @@ public class AssetItemEditor : Editor
         item.ClipReloadTime = EditorGUILayout.IntField("ClipReloadTime", item.ClipReloadTime);
     }
 }
-
