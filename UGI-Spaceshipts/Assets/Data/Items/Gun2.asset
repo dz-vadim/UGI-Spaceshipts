@@ -21,4 +21,5 @@ MonoBehaviour:
   EnginePower: 0
   DamagResistance: 0
   RegenerationValue: 0
-  ObjectType: 2
+  PumpingLevel: 1
+  ObjectType: 1

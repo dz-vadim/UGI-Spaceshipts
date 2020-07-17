@@ -18,4 +18,13 @@ public class Projectile : MonoBehaviour
         _rigidbody2D.AddForce(Vector3.up * _speed);
         Destroy(gameObject, 2f);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Enemy>())
+        {
+            Destroy(collision.gameObject);
+        }
+        Destroy(gameObject);
+    }
 }
