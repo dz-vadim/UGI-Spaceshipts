@@ -5,28 +5,36 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
-    [SerializeField] private int _speed = 10;
+    public float Speed = 10;
 
     [SerializeField] private float leftLimit;
     [SerializeField] private float rigthLimit;
     [SerializeField] private float bottomLimit;
     [SerializeField] private float upperLimit;
 
+    private MovePlayer _engineThrust;
 
+    void Awake()
+    {
+        if (GetComponent<MovePlayer>() != null)
+        {
+            _engineThrust = GetComponent<MovePlayer>();
+            _engineThrust.enabled = false;
+        }
+    }
 
     void Start()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();        
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         if ((horizontal != 0)||((vertical != 0)))
         {
-            _rigidbody2D.AddForce(new Vector2(horizontal,vertical)*_speed);
+            _rigidbody2D.AddForce(new Vector2(horizontal,vertical)*Speed);
 
             transform.position = new Vector3
                 (

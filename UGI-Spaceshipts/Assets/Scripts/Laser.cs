@@ -18,13 +18,7 @@ public class Laser : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(RateOfFire);
-            Spawn();
             PrefabLaser.SetActive(!PrefabLaser.activeSelf);
         }
-    }
-
-    private void Spawn()
-    {
-
     }
 }
