@@ -19,6 +19,9 @@ MonoBehaviour:
   ClipSize: 1
   ClipReloadTime: 1
   EnginePower: 0
-  DamagResistance: 0
+  DamageResistance: 0
   RegenerationValue: 0
-  ObjectType: 2
+  PumpingLevel: 1
+  ImplementPrefab: {fileID: 2314677614071351672, guid: dbf64c582e50f4842b3db4d20ab5a448,
+    type: 3}
+  ObjectType: 0

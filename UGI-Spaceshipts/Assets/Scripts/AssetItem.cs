@@ -21,6 +21,7 @@ public class AssetItem : ScriptableObject, IItem
     [HideInInspector] public int DamageResistance;
     [HideInInspector] public int RegenerationValue;
     [HideInInspector] public int PumpingLevel = 1;
+    public GameObject ImplementPrefab;
 
 
     public enum objectType

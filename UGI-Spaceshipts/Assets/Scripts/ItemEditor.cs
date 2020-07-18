@@ -62,5 +62,6 @@ public class ItemEditor : Editor
         item.ClipSize = EditorGUILayout.IntField("ClipSize", item.ClipSize);
         item.ClipReloadTime = EditorGUILayout.IntField("ClipReloadTime", item.ClipReloadTime);
         item.PumpingLevel = EditorGUILayout.IntField("PumpingLevel", item.PumpingLevel);
+        //item.ImplementPrefab = EditorGUILayout.ObjectField ("PumpingLevel", item.ImplementPrefab);
     }
 }
